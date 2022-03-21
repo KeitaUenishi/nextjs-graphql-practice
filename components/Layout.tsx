@@ -1,13 +1,14 @@
 import { ReactNode, VFC } from "react";
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface Props {
-  childlen: ReactNode
+  children: ReactNode
   title: string
 }
 export const Layout: VFC<Props> = ({
-  childlen,
+  children,
   title = 'Welcome to Nextjs',
 }) => {
   return (
@@ -72,7 +73,7 @@ export const Layout: VFC<Props> = ({
         </nav>
       </header>
       <main className="flex flex-1 flex-col justify-center items-center w-screen">
-        {childlen}
+        {children}
       </main>
       <footer className="w-full h-12 flex justify-center items-center border-t">
         <a
@@ -82,7 +83,7 @@ export const Layout: VFC<Props> = ({
           rel="noopener noreferrer"
         >
           Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
+          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
         </a>
       </footer>
     </div>
