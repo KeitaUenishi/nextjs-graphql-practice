@@ -62,7 +62,6 @@ const HasuraCRUD: VFC = () => {
       setEditedUser({ id: '', name: '' })
     } else {
       try {
-        console.log(editedUser.name)
         await insert_users_one({
           variables: {
             name: editedUser.name,
